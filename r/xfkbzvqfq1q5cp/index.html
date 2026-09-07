@@ -1,0 +1,755 @@
+<!doctype html><html lang="ru"><head><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Выход в US-венчур</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{color-scheme:light dark}
+html,body{margin:0;padding:0}
+img{max-width:100%}
+[hidden]:not([hidden=until-found]){display:none!important}
+
+:root{
+  --ground:#EFF1EC;
+  --surface:#FBFCFA;
+  --ink:#161C18;
+  --ink-2:#3C4741;
+  --muted:#68746D;
+  --rule:#D6DBD2;
+  --rule-strong:#BAC2B5;
+
+  --accent:#1C5D53;
+  --accent-soft:#DCEAE4;
+  --accent-ink:#134741;
+
+  --ok:#2C6E4B;    --ok-bg:#DDEBE0;
+  --late:#8A5A12;  --late-bg:#F2E6CE;
+  --night:#4C4A80; --night-bg:#E1E1F0;
+  --early:#1F5F72; --early-bg:#D8E9EE;
+  --any:#5A625C;   --any-bg:#E3E6E1;
+
+  --danger:#8E3223; --danger-bg:#F3DCD7;
+
+  --shadow:0 1px 2px rgba(22,28,24,.05), 0 8px 20px -14px rgba(22,28,24,.28);
+
+  --font-display:'Golos Text','IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-body:'IBM Plex Sans','Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1412;
+    --surface:#161D1A;
+    --ink:#E9EDE8;
+    --ink-2:#C3CCC5;
+    --muted:#8E9A93;
+    --rule:#2A342E;
+    --rule-strong:#3A473F;
+
+    --accent:#4FA595;
+    --accent-soft:#173430;
+    --accent-ink:#7FC7B8;
+
+    --ok:#6FBE8B;   --ok-bg:#17301F;
+    --late:#D3A353; --late-bg:#33270F;
+    --night:#9E9BD6; --night-bg:#211F38;
+    --early:#66B4C8; --early-bg:#112E36;
+    --any:#9AA49D;  --any-bg:#222A26;
+
+    --danger:#E08272; --danger-bg:#361813;
+
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.75);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1412;
+  --surface:#161D1A;
+  --ink:#E9EDE8;
+  --ink-2:#C3CCC5;
+  --muted:#8E9A93;
+  --rule:#2A342E;
+  --rule-strong:#3A473F;
+
+  --accent:#4FA595;
+  --accent-soft:#173430;
+  --accent-ink:#7FC7B8;
+
+  --ok:#6FBE8B;   --ok-bg:#17301F;
+  --late:#D3A353; --late-bg:#33270F;
+  --night:#9E9BD6; --night-bg:#211F38;
+  --early:#66B4C8; --early-bg:#112E36;
+  --any:#9AA49D;  --any-bg:#222A26;
+
+  --danger:#E08272; --danger-bg:#361813;
+
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.75);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+
+header.top{padding:44px 0 26px;border-bottom:2px solid var(--ink);margin-bottom:26px}
+.eyebrow{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,6.2vw,58px);line-height:1.02;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance}
+.standfirst{font-size:17px;color:var(--ink-2);max-width:64ch;margin:0}
+.standfirst b{color:var(--ink);font-weight:600}
+
+.tally{display:flex;flex-wrap:wrap;gap:0;margin-top:26px;border:1px solid var(--rule);border-radius:3px;background:var(--surface);overflow:hidden}
+.tally div{flex:1 1 150px;padding:13px 16px;border-right:1px solid var(--rule)}
+.tally div:last-child{border-right:0}
+.tally .n{font-family:var(--font-mono);font-size:23px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1;display:block}
+.tally .l{font-size:12px;color:var(--muted);margin-top:3px;display:block}
+.tally .n.good{color:var(--ok)}
+.tally .n.warn{color:var(--late)}
+.tally .n.bad{color:var(--danger)}
+
+.walls{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:30px 0 8px}
+.wall{border-left:3px solid var(--danger);background:var(--danger-bg);padding:15px 18px;border-radius:0 3px 3px 0}
+.wall h3{font-family:var(--font-display);font-size:14.5px;font-weight:700;margin:0 0 7px;color:var(--danger);letter-spacing:-.01em}
+.wall p{margin:0;font-size:13.6px;color:var(--ink-2);line-height:1.5}
+.wall b{color:var(--ink)}
+
+.controls{position:sticky;top:0;z-index:20;background:var(--ground);padding:16px 0 13px;margin:34px 0 0;border-bottom:1px solid var(--rule)}
+.controls-inner{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ctl-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.chip{font-family:var(--font-body);font-size:13.2px;font-weight:500;padding:6px 13px;border-radius:100px;cursor:pointer;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-2);transition:background .13s,border-color .13s,color .13s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
+
+section{margin-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+h2{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-.017em;margin:0}
+.sec-note{font-size:13.6px;color:var(--muted);max-width:70ch;margin:0 0 18px}
+
+.row{display:grid;grid-template-columns:132px 1fr 172px;background:var(--surface);border:1px solid var(--rule);border-radius:4px;margin-bottom:9px;overflow:hidden;box-shadow:var(--shadow)}
+.row.star{border-color:var(--accent);border-width:1.5px}
+.when{padding:15px 14px;border-right:1px solid var(--rule);border-left:4px solid var(--band);background:var(--band-bg)}
+.when .day{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--band)}
+.when .clock{font-family:var(--font-mono);font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px;color:var(--ink);letter-spacing:-.02em}
+.when .cad{font-size:11.6px;color:var(--muted);margin-top:5px;line-height:1.35}
+
+.body{padding:15px 17px;min-width:0}
+.name{font-family:var(--font-display);font-size:16.5px;font-weight:700;letter-spacing:-.012em;margin:0 0 2px;line-height:1.25;text-wrap:balance}
+.star .name::before{content:"★ ";color:var(--accent)}
+.org{font-size:12.4px;color:var(--muted);margin:0 0 9px;font-family:var(--font-mono)}
+.body dl{display:grid;grid-template-columns:auto 1fr;gap:3px 11px;margin:0;font-size:13.5px}
+.body dt{font-family:var(--font-mono);font-size:10.6px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.body dd{margin:0;color:var(--ink-2);line-height:1.5}
+.body dd b{color:var(--ink);font-weight:600}
+.caveat{margin-top:10px;padding-top:9px;border-top:1px dashed var(--rule-strong);font-size:12.9px;color:var(--muted);line-height:1.5}
+.caveat::before{content:"↳ ";color:var(--late);font-weight:600}
+.caveat b{color:var(--ink-2)}
+
+.side{padding:15px;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.pill{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;padding:3px 9px;border-radius:3px;font-weight:500;max-width:100%;overflow-wrap:break-word}
+.pill.free{background:var(--ok-bg);color:var(--ok)}
+.pill.paid{background:var(--danger-bg);color:var(--danger)}
+.pill.unk{background:var(--any-bg);color:var(--any)}
+.pill.talk{background:var(--accent-soft);color:var(--accent-ink)}
+.pill.watch{background:var(--any-bg);color:var(--any)}
+.pill.ai{background:var(--night-bg);color:var(--night)}
+.status{font-size:11.6px;font-family:var(--font-mono);line-height:1.35;margin-top:auto;padding-top:6px}
+.status.conf{color:var(--ok)}
+.status.uns{color:var(--late)}
+.status.unch{color:var(--muted)}
+.go{font-family:var(--font-body);font-size:13px;font-weight:600;text-decoration:none;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;overflow-wrap:anywhere}
+.go:hover{color:var(--ink);border-color:var(--ink)}
+.go:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.empty{padding:30px;text-align:center;color:var(--muted);font-size:14px;border:1px dashed var(--rule-strong);border-radius:4px}
+
+.plain{border-top:1px solid var(--rule)}
+.plain ul{margin:0;padding:0}
+.plain li{list-style:none;padding:12px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:6px 20px}
+.plain .k{font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--ink)}
+.plain .v{font-size:13.6px;color:var(--ink-2);line-height:1.52}
+.plain .v q{font-family:var(--font-mono);font-size:12.6px;color:var(--muted);font-style:normal}
+.rejected li .k{color:var(--danger);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--rule-strong)}
+
+footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--ink);font-size:13px;color:var(--muted);line-height:1.6}
+footer b{color:var(--ink-2);font-weight:600}
+footer p{margin:0 0 10px}
+footer p:last-child{margin-bottom:0}
+
+@media (max-width:860px){
+  .row{grid-template-columns:110px 1fr}
+  .side{grid-column:1 / -1;border-left:0;border-top:1px solid var(--rule);flex-direction:row;flex-wrap:wrap;align-items:center;padding:11px 15px}
+  .status{margin-top:0;padding-top:0;width:100%}
+  .plain li{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head><body>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Проверено 4 сентября 2026 · 16 агентов · 831 обращение к страницам</div>
+  <h1>Выход в US-венчур</h1>
+  <p class="standfirst">Онлайн-события, куда AI-фаундеру из Москвы реально попасть к инвесторам. Каждую страницу открывали руками; всё, что не подтвердилось, помечено — <b>или вынесено в раздел ловушек внизу</b>.</p>
+
+  <div class="tally">
+    <div><span class="n good">42</span><span class="l">подтверждено проверкой</span></div>
+    <div><span class="n warn">23</span><span class="l">под вопросом</span></div>
+    <div><span class="n bad">10</span><span class="l">фактов опровергнуто</span></div>
+    <div><span class="n">15</span><span class="l">мест, куда не пустят</span></div>
+  </div>
+</header>
+
+<div class="walls">
+  <div class="wall">
+    <h3>Стена первая: деньги</h3>
+    <p>Везде, где настоящий доступ к инвестору продаётся, платёж идёт через Stripe или PayPal — российская карта не пройдёт. VC Conf: полезная часть от <b>$349</b>. Pitch Global: интро по почте только презентерам от <b>$497</b>. Founders Bay: питч <b>$50</b>. Bootstrappers: <b>$10</b> и только PayPal. Поэтому всё ценное в списке ниже — то, что бесплатно.</p>
+  </div>
+  <div class="wall">
+    <h3>Стена вторая: часовой пояс</h3>
+    <p>Вечер по тихоокеанскому — это ночь по Москве. Поэтому колонка времени здесь главная: цветом размечено, когда событие попадает в твой рабочий день, когда в поздний вечер, а когда придётся жертвовать сном. Удобных слотов больше, чем кажется, — их и надо выбирать.</p>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="controls-inner">
+    <span class="ctl-label">Фильтр</span>
+    <button class="chip" data-f="free" aria-pressed="false">Бесплатно</button>
+    <button class="chip" data-f="talk" aria-pressed="false">Можно говорить</button>
+    <button class="chip" data-f="good" aria-pressed="false">Удобное время</button>
+    <button class="chip" data-f="ai" aria-pressed="false">Про AI</button>
+    <button class="chip" data-f="inv" aria-pressed="false">Есть инвесторы</button>
+    <button class="chip" data-f="conf" aria-pressed="false">Только подтверждённое</button>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<section>
+  <div class="sec-head"><h2>Даты, на которые можно встать сейчас</h2></div>
+  <p class="sec-note">По возрастанию даты. Звездой отмечено то, что для твоей задачи — AI-продукт и поиск инвестора — стоит остального вместе взятого.</p>
+  <div id="list-dated"></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Каналы без расписания</h2></div>
+  <p class="sec-note">Работают асинхронно, часовой пояс не мешает вообще. Для человека из Москвы это самая недооценённая часть списка: контакт здесь строится не за час эфира, а неделями.</p>
+  <div id="list-always"></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Куда не ходить</h2></div>
+  <p class="sec-note">Проверка открыла эти страницы и нашла причину не тратить на них вечер. В кавычках — дословные формулировки со страниц.</p>
+  <div class="plain">
+    <ul>
+      <li><span class="k">Keiretsu Best of Showcase</span><span class="v">Все три категории билетов — инвесторские. Категории «основатель» просто нет. Плюс Zoom Webinar: у зрителя нет ни камеры, ни микрофона. А по Москве это глубокая ночь, от околополуночи до рассвета.</span></li>
+      <li><span class="k">CONNECTpreneur, 29 октября</span><span class="v">Дословно: <q>Curated presenters. Investors only.</q> Войти можно либо отобранным презентующим, либо инвестором. Третьего входа нет.</span></li>
+      <li><span class="k">Venture Starters, 23 сентября</span><span class="v"><q>Members and interns only</q> — этот конкретный выпуск закрытый, в отличие от остальных в серии.</span></li>
+      <li><span class="k">gener8tor, 16 сентября</span><span class="v"><q>gener8tor Alumni ONLY</q>. А вот Lightning Rounds 21 октября и 4 ноября открыты всем и бесплатны — они в списке выше.</span></li>
+      <li><span class="k">Founder Institute VIP Pitch Lounge</span><span class="v">Только для принятых фаундеров польской осенней программы, менторов и партнёров FI. Открытые события FI — отдельные, они в списке выше.</span></li>
+      <li><span class="k">Seed Round Virtual PitchForce</span><span class="v"><q>The Investor/Attendee ticket is not a pitching ticket</q>. Zoom Webinar, и по Москве это глубокая ночь. Смотреть чужие питчи без права голоса.</span></li>
+      <li><span class="k">Founders Network</span><span class="v">$900–$2 988 в год единовременно, invite-only. Расписание вебинаров закрыто для не-членов: проверить, что «40+ live webinars» реально идут осенью 2026, невозможно до оплаты.</span></li>
+      <li><span class="k">Pitch Lounge</span><span class="v">Вся сентябрьская линейка — food, foodtech, beverage. Плюс цены нет нигде, а страница со списком событий отдаёт 404.</span></li>
+      <li><span class="k">HOT or NOT · Venture Vitality</span><span class="v">Только health tech: мужское здоровье, ментальное здоровье, женское здоровье. Для AI-продукта общего назначения мимо.</span></li>
+      <li><span class="k">Investors Circle</span><span class="v">Impact investing и ESG. Бесплатно и в удобное время, но без impact-угла в питче там нечего делать.</span></li>
+      <li><span class="k">Bootstrappers Breakfast</span><span class="v">Дословно: <q>The emphasis is not on VC fundraising</q>. Клуб тех, кто принципиально не поднимает раунды, — ровно противоположная тебе задача. Плюс $10 через PayPal.</span></li>
+      <li><span class="k">Hardware Founders Assemble</span><span class="v">Только физический продукт.</span></li>
+      <li><span class="k">Prosto VC</span><span class="v">Русскоязычный венчурный клуб — звучит идеально, но год на странице конференции не указан вообще, по контексту это апрель 2024. Анонсов и дат 2026 года нет. Членство платное, сумма не названа нигде.</span></li>
+      <li><span class="k">Founder Showcase</span><span class="v">Единственная дата на сайте — 10 декабря 2025. На 2026 год дат нет. Серия, вероятно, мертва.</span></li>
+      <li><span class="k">SaaStr Workshop Wednesdays</span><span class="v">Слот «каждую среду утром по тихоокеанскому» заявлен, но ни одной датированной сессии подтвердить не удалось: единственный анонс подписан <q>Wednesday, January 11th</q> без года, календарь показывает 2025-й. Присутствие инвесторов тоже не подтвердилось.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Что проверка опровергла</h2></div>
+  <p class="sec-note">Первичные находки агентов, не пережившие открытия страницы. Держи их в голове: ровно эти цифры кочуют по обзорам и подводят.</p>
+  <div class="plain rejected">
+    <ul>
+      <li><span class="k">«375+ инвесторов на VC Conf»</span><span class="v">На странице — <q>125+ investors joining pitches</q>. Цифра 3 000+ относится к базе контактов Super Networking List, а не к участникам питчей.</span></li>
+      <li><span class="k">«Таймер цены VC Conf идёт по Москве»</span><span class="v">Слова «Moscow» в HTML страницы нет вообще. Таймер подставляет часовой пояс посетителя.</span></li>
+      <li><span class="k">«У YC Startup School есть еженедельные office hours когортами по 6–8 человек»</span><span class="v">Этого на сайте нет. Есть курс, co-founder matching и еженедельный трекер прогресса. Живых событий и брейкаутов нет вообще.</span></li>
+      <li><span class="k">«На SaaStr бывают Tunguz, Bessemer, Andreessen»</span><span class="v">Ни одного из них на страницах не найдено. Присутствие инвесторов не подтверждено ничем.</span></li>
+      <li><span class="k">«427 и 593 зарегистрировавшихся на Techstars»</span><span class="v">Этих чисел на странице нет, guest_count = 0.</span></li>
+      <li><span class="k">«2 169 зарегистрированных на хакатоне AI Tinkerers»</span><span class="v">На странице «+200».</span></li>
+      <li><span class="k">«Судьи Founders Bay: Jake Schwartz, Conor Riley, Hermann Schindler»</span><span class="v">Ни одно имя страницами не подтверждается.</span></li>
+      <li><span class="k">«Pitch Lounge в партнёрстве с Techstars и Starlight Capital»</span><span class="v">Партнёрство не подтверждено.</span></li>
+      <li><span class="k">«Prosto VC соинвестирует с a16z, Sequoia, Accel, Tiger Global»</span><span class="v">Не подтверждено ничем.</span></li>
+      <li><span class="k">«Билеты VC Fast Pitch от $27.72»</span><span class="v">Такой суммы на странице нет. Eventbrite отдаёт только нижнюю границу 0.0 и верхнюю $3 112.79; промежуточные тиры грузятся виджетом и в HTML не приходят.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p><b>Как это собрано.</b> Семь агентов искали по непересекающимся каналам, каждую находку проверял отдельный скептик с инструкцией открыть страницу и по умолчанию отклонять то, что не подтвердилось. Затем критик полноты добирал пропущенное. Время везде пересчитано в московское; там, где часовой пояс на странице не указан, стоит «сверить перед выходом» — и это не формальность: витрина Founder Institute геолоцируется по IP и показывает одному и тому же событию разное время.</p>
+  <p><b>Чего эта страница не знает.</b> Доступность Zoom из России не проверялась ни по одному событию — «оплата не нужна» относится к деньгам и регистрации, но не к самому факту подключения. Meetup и Luma регистрируют по email, US-телефон не требуется.</p>
+</footer>
+
+</div>
+
+<script>
+const BANDS = {
+  ok:   {label:'удобно',        c:'var(--ok)',    bg:'var(--ok-bg)'},
+  late: {label:'поздний вечер', c:'var(--late)',  bg:'var(--late-bg)'},
+  night:{label:'ночь',          c:'var(--night)', bg:'var(--night-bg)'},
+  early:{label:'раннее утро',   c:'var(--early)', bg:'var(--early-bg)'},
+  any:  {label:'в любое время', c:'var(--any)',   bg:'var(--any-bg)'}
+};
+
+const EVENTS = [
+  {
+    day:'пн 7 сент', clock:'20:00', band:'late', cad:'разовое',
+    name:'Founders Bay: Virtual Investor Pitch Session',
+    org:'Founders Bay · Luma',
+    what:'Питч-сессия перед инвесторами. Бесплатный билет — только смотреть, как это устроено изнутри.',
+    who:'Судьи-инвесторы заявлены, но поимённо ни одно имя страницей не подтверждается.',
+    net:'Watch Only — просмотр. Питчить — $50 через Stripe.',
+    caveat:'Идти ради одного: посмотреть механику до того, как питчить самому.',
+    price:'watch free / pitch $50', pricecls:'paid',
+    talk:false, ai:false, inv:true, status:'uns',
+    url:'https://luma.com/pimrremg'
+  },
+  {
+    day:'вт 8 сент', clock:'11:00', band:'ok', cad:'разовое',
+    name:'Angel Investing 101 — Learn, Invest, Connect',
+    org:'SIA Angel Hub · Seattle Angel',
+    what:'Как ангел смотрит на стартап: due diligence, разбор реальных заявок, живые питчи фаундеров.',
+    who:'Действующие и начинающие ангелы из когорты TAAC — Европа и США.',
+    net:'Открытая Q&amp;A — вопросы можно задавать вживую.',
+    caveat:'Единственный пункт первой недели, который агент не открывал лично. Слот по тихоокеанскому настолько нетипичный, что перед выходом страницу надо открыть и убедиться.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'unch',
+    url:'https://www.meetup.com/seattle-angel/events/315425517/'
+  },
+  {
+    day:'вт 8 сент', clock:'14:30', band:'ok', cad:'разовое',
+    name:'The Dark Art of Startup Fundraising',
+    org:'Paul King · Rebel Meetups New York',
+    what:'Психология инвестора, рычаг в переговорах, разбор equity-условий — как сделать, чтобы инвесторы шли к тебе.',
+    who:'Paul King, Towards Better — советник, помогал закрывать раунды свыше £10 млн. Инвесторов в зале нет.',
+    net:'Вебинар. Контакт только через вопросы спикеру.',
+    caveat:'Организатор фактически британский, площадка — нью-йоркская группа Meetup. Берём ради содержания, а не знакомств.',
+    price:'бесплатно', pricecls:'free',
+    talk:false, ai:false, inv:false, status:'conf',
+    url:'https://www.meetup.com/meetups-new-york/events/316099996/'
+  },
+  {
+    day:'вт 8 сент', clock:'18:30', band:'ok', cad:'каждый вторник до 30 марта 2027',
+    name:'Virtual Seattle Startup Open Coffee',
+    org:'Startup Haven',
+    what:'Неформальная встреча за кофе: предприниматели, стартапы и ангелы обсуждают, кто где застрял.',
+    who:'Дословно: <b>entrepreneurs, startups and investors</b>. Цель — связать фаундеров с ангелами Сиэтла.',
+    net:'Свободный разговор, не вебинар. Zoom-ссылка прямо в описании события.',
+    caveat:'Поимённо ни одного ангела не названо — только декларация формата. Зато это можно повторять каждую неделю, а связи строятся повторами.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.meetup.com/seattle-startups-open-coffee/events/315983789/'
+  },
+  {
+    day:'вт 8 сент', clock:'19:00', band:'ok', cad:'разовое',
+    name:'TAAC 10 Pitch Competition — сессия для стартапов',
+    org:'SIA Angel Hub · Seattle Angel',
+    what:'Открытая Q&amp;A о том, как устроен отбор в питч-соревнование ангельской когорты.',
+    who:'Организаторы ангельской программы.',
+    net:'Вопросы вживую.',
+    caveat:'',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.meetup.com/seattle-angel/events/315425702/'
+  },
+  {
+    day:'ср 9 сент', clock:'19:00', band:'ok', cad:'каждую среду',
+    name:'Founders for Founders',
+    org:'F4F',
+    what:'Малая группа основателей, ротация по четырём собеседникам за час. Не трансляция — разговор.',
+    who:'Только фаундеры, инвесторов нет, и это честно заявлено.',
+    net:'Самый чистый разговорный формат из бесплатных.',
+    caveat:'Требование со страницы: <b>Advanced English proficiency is required</b>. И важный нюанс: серия живёт внутри инфраструктуры языковой практики — на SpeakDuo она подписана как «Free live language practice». Это peer-круг, а не источник денег.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:false, status:'conf',
+    url:'https://f4f.vc/events'
+  },
+  {
+    day:'ср 9 сент', clock:'20:00', band:'late', cad:'каждую среду до 21 февраля 2027', star:true,
+    name:'ATX Founder Office Hours',
+    org:'Arturo Piña · ATX Startup Network, Остин',
+    what:'Тридцать минут один на один с действующим ранним инвестором. Не питч — разбор твоей текущей задачи: wedge, первые клиенты, GTM, капитал.',
+    who:'Ты и Arturo Piña, который, дословно со страницы, <b>now invests in early-stage technology companies</b>. Больше никого в комнате.',
+    net:'Единственный бесплатный 1:1 с инвестором во всём списке. Бронь только через Calendly: calendly.com/chatwitharturo/atx-founder-office-hours',
+    caveat:'Со страницы дословно: <b>Your Meetup RSVP does not reserve an Office Hours session</b>. Отметиться на Meetup недостаточно — слот берётся отдельно, в Calendly. Их четыре в неделю, разбирают быстро.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.meetup.com/atx-startup-network/events/316405481/'
+  },
+  {
+    day:'ср 9 сент', clock:'23:00', band:'night', cad:'еженедельно',
+    name:'Venture Starters — Free Pitch Zoom Meeting #148',
+    org:'Venture Starters',
+    what:'Открытая питч-встреча в Zoom, регистрация прямо через Zoom-форму без промежуточных платформ.',
+    who:'Инвесторы и фаундеры серии.',
+    net:'Живая питч-сессия. Самый низкий барьер регистрации из всего списка.',
+    caveat:'Ближайшие выпуски тематические: healthcare, climate, wildfires. <b>Профильного AI-слота нет.</b> И заканчивается уже за полночь по Москве. Выпуск 23 сентября вообще закрытый — members and interns only.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://venturestarters.com'
+  },
+  {
+    day:'чт 10 сент', clock:'17:00', band:'ok', cad:'каждый четверг', star:true,
+    name:'staaake Founders &amp; Creators Tech/AI',
+    org:'staaake',
+    what:'Еженедельный часовой созвон основателей и билдеров в tech и AI. Лимит пятнадцать человек.',
+    who:'Фаундеры и креаторы в AI. Инвесторов нет — это про кофаундеров и первых пользователей.',
+    net:'Дословно: <b>One rule: Camera ON. Limited to 15 people. First 15 in.</b> После звонка дают доступ в четырнадцать WhatsApp-групп — а WhatsApp из Москвы работает, в отличие от половины остальных каналов.',
+    caveat:'<b>Late arrivals will not be admitted</b> — опоздавших не пускают, заходить заранее.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:true, inv:false, status:'conf',
+    url:'https://www.meetup.com/staaake/events/316359258/'
+  },
+  {
+    day:'чт 10 сент', clock:'19:00', band:'ok', cad:'регулярно + хакатон 12 сент',
+    name:'AI Tinkerers Virtual: production-ready агенты',
+    org:'AI Tinkerers',
+    what:'Как строить продакшн-агентов и безопасно исполнять сгенерированный AI код. Хакатон — суббота 12 сентября, с вечера по Москве и до рассвета.',
+    who:'Дословно: <b>builder-only community with rigorous curation</b>, участники — engineers, founders, researchers. Инвесторы не упоминаются вообще.',
+    net:'Обсуждение и Q&amp;A. Настоящий контакт — на хакатоне: несколько часов совместной работы.',
+    caveat:'Модель доступа <b>Apply to Attend</b> — кураторский отбор, могут не пустить. Денег здесь нет; ценность — кофаундеры и техническое комьюнити ровно твоего профиля.',
+    price:'цена не указана', pricecls:'unk',
+    talk:true, ai:true, inv:false, status:'conf',
+    url:'https://virtual-events.aitinkerers.org/'
+  },
+  {
+    day:'пт 11 сент', clock:'17:00', band:'ok', cad:'разовое',
+    name:'Cofounder Clarity: тактики для основательских команд',
+    org:'Dr Matthew Jones · Rebel Meetups NY',
+    what:'Как договариваться внутри основательской команды до того, как это станет проблемой на due diligence.',
+    who:'Фаундеры и те, кто ищет сооснователя.',
+    net:'Вебинарный формат.',
+    caveat:'Лично страницу не открывали — данные от агента-критика. Соседнее событие той же группы проверено, группа и формат реальны.',
+    price:'бесплатно', pricecls:'free',
+    talk:false, ai:false, inv:false, status:'unch',
+    url:'https://www.meetup.com/meetups-new-york/events/316112723/'
+  },
+  {
+    day:'вт 15 сент', clock:'18:00', band:'ok', cad:'третий вторник месяца',
+    name:'Silicon Valley Bootstrapper Breakfast Online',
+    org:'Bootstrappers Breakfast',
+    what:'Разговор основателей, которые растут без внешних денег.',
+    who:'Бутстрап-фаундеры Кремниевой долины.',
+    net:'Живой разговор, лимит 25 мест.',
+    caveat:'Дословно со страницы: <b>The emphasis is not on VC fundraising</b> — прямо противоположно твоей цели. Плюс $10 и единственный способ оплаты PayPal, который в России не работает. Оставлено в списке только чтобы ты не потратил на него вечер, наткнувшись где-то ещё.',
+    price:'$10 · только PayPal', pricecls:'paid',
+    talk:true, ai:false, inv:false, status:'conf',
+    url:'https://www.meetup.com/bootstrappers-breakfast-silicon-valley/'
+  },
+  {
+    day:'чт 17 сент', clock:'18:00', band:'ok', cad:'серия, 24-й выпуск',
+    name:'Virtual 1:1 VC Pitch Conf',
+    org:'VC Conf · команда Max Pog',
+    what:'Автоматчинг фаундеров и фондов по стадии, сектору и региону, затем двадцать 1:1 видеозвонков подряд.',
+    who:'Единственное событие с поимённым составом: Khailee Ng (500 Global, $2.3B AUM), Bill Liao (SOSV), Alice Bentinck (Entrepreneurs First), Tim Suzman (Pioneer Fund), Haley Bryant (Hustle Fund), Igor Ryabenkiy (AltaIR Capital), Karen Page (B Capital). Заявлено <b>125+ investors joining pitches</b>, медианный прямой чек $275K.',
+    net:'Механика сильнейшая в подборке — но только на платном тарифе.',
+    caveat:'Бесплатный билет прямо помечен на странице: <b>Not included: 20 pitches to matched investors</b>. То есть бесплатно — ровно то одностороннее вещание, которого надо избегать. Полезная часть от $349 early-bird западной картой. Двухчасовой speed networking — investor-only, фаундеров туда не пускают.',
+    price:'free просмотр / от $349', pricecls:'paid',
+    talk:false, ai:false, inv:true, status:'conf',
+    url:'https://vcconf.com/'
+  },
+  {
+    day:'чт 17 сент', clock:'19:00', band:'ok', cad:'третий четверг месяца',
+    name:'Investors Circle — National Virtual Meeting',
+    org:'Investors Circle',
+    what:'Ежемесячная национальная встреча сети импакт-инвесторов, гостей пускают.',
+    who:'Импакт-инвесторы.',
+    net:'Отдельная регистрация для гостей и визитёров, оплата не нужна.',
+    caveat:'Фокус — impact investing и ESG. Для AI-продукта без impact-угла содержание пройдёт мимо. Дальше: 15 октября и 19 ноября, тот же слот.',
+    price:'бесплатно', pricecls:'free',
+    talk:false, ai:false, inv:true, status:'conf',
+    url:'https://investorscircle.net/'
+  },
+  {
+    day:'чт 17 сент', clock:'20:00', band:'late', cad:'ежемесячно: 22 окт, 19 ноя, 3 дек', star:true,
+    name:'Angel Club Pitch Slam — Q4 Raise Room',
+    org:'Angel Gambino + Anthony Rose (SeedLegals)',
+    what:'Питч три минуты, живой фидбек, брейкаут-комната, где инвестор говорит с четырьмя-шестью фаундерами.',
+    who:'Со страницы: <b>active angels, seed funds, family offices, and operators</b>. Хосты поимённо: Angel Gambino (5 экзитов) и Anthony Rose (CEO SeedLegals). Заявлено: <b>30% of pitches at our events lead to follow-up meetings and investment</b>.',
+    net:'Лучшая бесплатная механика в подборке. Питч-слоты раздаются первым пришедшим прямо в эфире, а не отбираются заранее — попасть можно с первого раза.',
+    caveat:'Это <b>не США</b>: часовой пояс события Europe/London, хост британский, аудитория UK и Европа. Точное время именно 17 сентября на странице не подписано — сверить в карточке регистрации luma.com/pitchslamsept. Декабрьский финал идёт без брейкаутов, все питчат на главной сцене.',
+    price:'бесплатно · free to pitch', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.angelclub.com/pitch-slam'
+  },
+  {
+    day:'пн 21 сент', clock:'19:00', band:'ok', cad:'еженедельные звонки сообщества',
+    name:'AI Global Networking: Founders &amp; Entrepreneurs',
+    org:'AI Circle',
+    what:'Международная встреча AI-предпринимателей с разбивкой на малые группы.',
+    who:'Список «кому идти» со страницы включает отдельной строкой <b>Investors &amp; AI-curious Operators</b>. Поимённо никого.',
+    net:'Со страницы: <b>Small-group breakouts designed to connect you with like-minded builders</b>. Реальные брейкауты, а не чат.',
+    caveat:'База — Барселона, не США, аудитория международная. Членство в Skool $29/мес российской картой не пройдёт, но для участия в событии оно не нужно.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:true, inv:true, status:'conf',
+    url:'https://www.meetup.com/ai-circle-for-entrepreneurs/events/316391417/'
+  },
+  {
+    day:'вт 22 сент', clock:'19:00', band:'ok', cad:'разовое', star:true,
+    name:'Inside the Investor Mind: что делает AI-стартап fundable',
+    org:'Founder Institute',
+    what:'Панель ровно про твой вопрос: по каким признакам инвесторы отделяют финансируемый AI-стартап от нефинансируемого.',
+    who:'Поимённый состав: Zoran Vasiljev (GP, Forty.5 Ventures), Christoph Berndt (Founder &amp; GP, Financewise Ventures), Razvan Suta (COO, Vest Ventures), Michael Schneider (Seedraisr), Dušan Karan (Innovation Fund). Минимум два действующих GP венчурных фондов.',
+    net:'Панель с вопросами из зала.',
+    caveat:'Механики нетворкинга страница не обещает: ни брейкаутов, ни 1:1. Идти за содержанием — услышать, как двое GP формулируют критерии. Это сербский чаптер FI, не американский. Слова «Free» на странице нет, но форма регистрации оплату не запрашивает.',
+    price:'цена не указана', pricecls:'unk',
+    talk:false, ai:true, inv:true, status:'conf',
+    url:'https://fi.co/event/inside-the-investor-mind-what-makes-an-ai-era-startup-fundable-serbia-2026'
+  },
+  {
+    day:'ср 23 сент', clock:'20:00', band:'late', cad:'серия',
+    name:'Online VC Fast Pitch',
+    org:'Black Dog Venture Partners · Scott Kelly',
+    what:'Питч-сессия перед венчурными инвесторами.',
+    who:'Инвесторы сети Black Dog Venture Partners.',
+    net:'Питч и обратная связь.',
+    caveat:'Цена вслепую: Eventbrite отдаёт только нижнюю границу 0.0 и верхнюю $3 112.79, промежуточные тиры грузятся виджетом и в HTML не приходят. Бесплатный уровень для слушателя есть — но что именно он даёт, страница не раскрывает.',
+    price:'от $0 до $3 112', pricecls:'unk',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.eventbrite.com/o/black-dog-venture-partners-1163962863'
+  },
+  {
+    day:'чт 25 сент', clock:'03:00', band:'night', cad:'ежемесячно: 23 окт, 27 ноя',
+    name:'Find a Cofounder, Help or Join a Tech Startup',
+    org:'Atlanta Startup CoFounders',
+    what:'Онлайн-выпуски встречи по поиску сооснователей. Серия идёт непрерывно, будущие даты подтверждены до февраля 2027.',
+    who:'Технические и бизнес-сооснователи.',
+    net:'Живой разговор.',
+    caveat:'Глубокая ночь по Москве. Ставить в календарь имеет смысл, только если готов жертвовать сном, — а YC Co-Founder Matching делает то же самое асинхронно и бесплатно.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:false, status:'conf',
+    url:'https://www.meetup.com/atlanta-startup-cofounders/'
+  },
+  {
+    day:'вт 29 сент', clock:'18:00', band:'ok', cad:'разовое',
+    name:'Techstars Virtual Meet and Greet',
+    org:'Techstars',
+    what:'Знакомство с программой Techstars и её командой перед подачей.',
+    who:'Команда Techstars.',
+    net:'Вебинар с вопросами. Механики знакомства между участниками нет.',
+    caveat:'<b>Это не серия.</b> Календарь Techstars показывает «No Upcoming Events», последние события там — 2023 год. Подтверждено ровно одно событие, 29 сентября. Работать надо по Luma-ссылке: на официальной странице Techstars стоит только «September 2026» без дня, часа и цены.',
+    price:'бесплатно', pricecls:'free',
+    talk:false, ai:false, inv:false, status:'conf',
+    url:'https://luma.com/uwnn35o4'
+  },
+  {
+    day:'ср 7 окт', clock:'07:00', band:'early', cad:'ежемесячно до сентября 2027',
+    name:'Startup Fundraising Office Hours — AMA с ангелом',
+    org:'Scott Fox · StartupCouncil.org',
+    what:'Ежемесячная открытая сессия вопросов и ответов с действующим ангелом. В сентябре выпуска нет, ближайший — 7 октября.',
+    who:'Scott Fox, ангел-инвестор.',
+    net:'AMA, вопросы вживую.',
+    caveat:'Трансляция идёт на YouTube, LinkedIn и Facebook. <b>LinkedIn и Facebook в России заблокированы, YouTube нестабилен</b> — без VPN в эфир, скорее всего, не попасть. Зато это редкий случай, когда US-событие попадает в твоё утро, а не в ночь.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.meetup.com/startup-council/'
+  },
+  {
+    day:'вт 13 окт', clock:'19:00', band:'ok', cad:'ежемесячно',
+    name:'Venture Vitality Health Tech Investor Roundtable',
+    org:'Yorkseed',
+    what:'Закрытый круглый стол инвесторов по health tech.',
+    who:'Инвесторы, LP и GP.',
+    net:'Обсуждение.',
+    caveat:'Заявлено как <b>private discussion</b> для инвесторов — модерация может не пропустить фаундера. Плюс тематика строго health tech. В списке только для полноты картины.',
+    price:'бесплатно', pricecls:'free',
+    talk:false, ai:false, inv:true, status:'uns',
+    url:'https://luma.com/yorkseed'
+  },
+  {
+    day:'ср 21 окт', clock:'время н/д', band:'any', cad:'и 4 ноября',
+    name:'gener8tor Lightning Rounds',
+    org:'gener8tor',
+    what:'Короткие питчи перед инвесторами. 21 октября — Fintech и Insurtech, 4 ноября — корпоративный выпуск.',
+    who:'Инвесторы сети gener8tor.',
+    net:'Питч-раунды.',
+    caveat:'Дословно с лендинга: <b>No! We will never charge startups to pitch.</b> Полей оплаты в форме нет. Но время в МСК не раскрывается до заполнения формы — известно только, что слоты показываются в Central Time. Дедлайна подачи на странице тоже нет: подаваться заранее.',
+    price:'бесплатно для стартапа', pricecls:'free',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://www.gener8tor.com/lightning-rounds'
+  },
+  {
+    day:'пт 23 окт', clock:'19:00', band:'ok', cad:'серия, плотная программа', star:true,
+    name:'Pitch Global: питч перед CVC, VC и ангелами',
+    org:'Pitch Global · SJSU',
+    what:'Три с половиной часа питчей перед корпоративными и классическими фондами.',
+    who:'Лучшее поимённое подтверждение среди бесплатно доступных: Benjamin Narasin (Founder, Tenacity Venture Capital), Raymond Zheng (Honda Corporate Venturing), Zafer Sahinoglu (VP Innovation, Mitsubishi Electric Innovation Center). Заявлено до десяти featured investors.',
+    net:'Со страницы дословно: <b>After the Event: Presenters matched with Investors and introduced via email</b>.',
+    caveat:'Ключевая деталь: интро по почте достаётся <b>презентерам</b>, а билет презентера — $497 early bird через Stripe. Бесплатный билет Audience подтверждён только на просмотр. Идти бесплатно стоит ради одного — увидеть этих людей и их вопросы, чтобы понять, чего они хотят.',
+    price:'Audience free / презентер $497', pricecls:'paid',
+    talk:false, ai:false, inv:true, status:'conf',
+    url:'https://luma.com/sxvct12f'
+  },
+  {
+    day:'вт 3 ноя', clock:'20:00', band:'late', cad:'разовое',
+    name:'From Founder to Funded: Q&amp;A с инвестором',
+    org:'Founder Institute',
+    what:'Живая сессия вопросов инвесторам из FI Venture Network — сети, финансирующей pre-seed и seed.',
+    who:'Заявлены VC из FI Venture Network, но поимённо состав пока не объявлен — до события два месяца.',
+    net:'Самый двусторонний из бесплатных форматов FI: фаундеры задают вопросы в живом эфире.',
+    caveat:'Один проверяющий не нашёл это событие в общем календаре FI вообще, другой открыл прямую страницу и подтвердил разметку. Вывод: <b>регистрироваться только по прямой ссылке</b>, в календаре его нет.',
+    price:'цена не указана', pricecls:'unk',
+    talk:true, ai:false, inv:true, status:'conf',
+    url:'https://fi.co/event/from-founder-to-funded-interactive-q-a-with-top-startup-investor-serbia-2026'
+  }
+];
+
+const ALWAYS = [
+  {
+    day:'постоянно', clock:'∞', band:'any', cad:'self-paced', star:true,
+    name:'YC Startup School + Co-Founder Matching',
+    org:'Y Combinator',
+    what:'Бесплатный курс о том, как устроен запуск по американским правилам, и крупнейшая в мире платформа поиска сооснователя.',
+    who:'Инвесторов нет, и это честно: партнёры YC фигурируют только как авторы лекций. Аудитория — фаундеры и потенциальные сооснователи.',
+    net:'<b>Over 100,000 matches made.</b> Настоящие 1:1 знакомства по алгоритму: профиль, кандидаты, приглашения, взаимные мэтчи. Активные пользователи в Сан-Франциско, Нью-Йорке, Лондоне. Общение в переписке — английский голосом не нужен вообще.',
+    caveat:'Опровергнуто и не закладываться: еженедельных групповых office hours когортами на сайте нет, живых событий и брейкаутов нет вообще. По доступности из России: страновых ограничений на странице не упомянуто — но «не написано» не равно «их нет», проверяется только регистрацией.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:false, status:'conf',
+    url:'https://www.startupschool.org/'
+  },
+  {
+    day:'круглосуточно', clock:'∞', band:'any', cad:'Paper Club — по средам', star:true,
+    name:'Latent Space — Discord и LLM Paper Club',
+    org:'Latent Space',
+    what:'Основное англоязычное сообщество инженеров и фаундеров вокруг LLM. Еженедельный разбор свежих статей плюс постоянный Discord.',
+    who:'Инвесторы как аудитория не заявлены. Косвенно: соведущий проекта Alessio Fanelli — партнёр фонда Decibel. Это вывод, а не факт со страницы.',
+    net:'Ключевая деталь со страницы: встречи <b>(intentionally) unrecorded</b> — запись намеренно не ведут, значит формат рассчитан на разговор участников, а не на вещание.',
+    caveat:'Самый низкобарьерный вход из всего списка: ни заявки, ни отбора, ни оплаты. Датированного ближайшего Paper Club на странице нет — только рекуррентный слот.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:true, inv:false, status:'uns',
+    url:'https://www.latent.space/p/community'
+  },
+  {
+    day:'весь сентябрь', clock:'∞', band:'any', cad:'поток хакатонов',
+    name:'lablab.ai — онлайн AI-хакатоны',
+    org:'lablab.ai',
+    what:'AssemblyAI Voice Agent Hackathon идёт весь сентябрь, войти можно в любой момент, призовой фонд $10 000. IBM Bob 2.0 — 25–27 сентября, 48 часов, $10 000.',
+    who:'Инвесторов нет: жюри по хакатонам не раскрыто, спонсоры корпоративные — AssemblyAI, Alpaca, IBM, AMD.',
+    net:'Несколько дней совместной работы с живыми людьми — самый плотный контакт из возможных. Но с разработчиками, а не с инвесторами.',
+    caveat:'Часть хакатонов гибридные, с офлайн-финалом в Санта-Кларе и Сан-Хосе: онлайн-фаза доступна, финал нет. Ценность — команда, портфолио и демо, которое потом показываешь инвестору.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:true, inv:false, status:'conf',
+    url:'https://lablab.ai/ai-hackathons'
+  },
+  {
+    day:'постоянно', clock:'∞', band:'any', cad:'Slack',
+    name:'Open Atlas',
+    org:'Open Atlas',
+    what:'Slack-сообщество high-skilled иммигрантов: визовые office hours, AMA с фаундерами, поднимавшими от seed до Series B.',
+    who:'Инвесторов как аудитории событий нет — подтверждены только фаундеры на AMA.',
+    net:'Slack — двусторонний канал, доступен из Москвы, вступить можно сегодня.',
+    caveat:'Это <b>визовый и диаспорный канал, а не питч-площадка</b>. Ставить в календарь нечего: конкретных будущих дат страница не публикует. Полезно, если думаешь про O-1 или EB-1A — а для AI-фаундера, целящегося в американские деньги, этот вопрос встанет.',
+    price:'бесплатно', pricecls:'free',
+    talk:true, ai:false, inv:false, status:'uns',
+    url:'https://theopenatlas.org/events'
+  }
+];
+
+function card(e){
+  const b = BANDS[e.band];
+  const el = document.createElement('article');
+  el.className = 'row' + (e.star ? ' star' : '');
+  el.style.setProperty('--band', b.c);
+  el.style.setProperty('--band-bg', b.bg);
+  el.dataset.free = (e.pricecls === 'free') ? '1' : '0';
+  el.dataset.talk = e.talk ? '1' : '0';
+  el.dataset.good = (e.band === 'ok' || e.band === 'any' || e.band === 'early') ? '1' : '0';
+  el.dataset.ai   = e.ai ? '1' : '0';
+  el.dataset.inv  = e.inv ? '1' : '0';
+  el.dataset.conf = (e.status === 'conf') ? '1' : '0';
+
+  const statusText = {conf:'проверено лично', uns:'под вопросом', unch:'не открывали лично'}[e.status];
+
+  el.innerHTML =
+    '<div class="when">' +
+      '<div class="day">' + e.day + '</div>' +
+      '<div class="clock">' + e.clock + '</div>' +
+      '<div class="cad">' + b.label + (e.cad ? ' · ' + e.cad : '') + '</div>' +
+    '</div>' +
+    '<div class="body">' +
+      '<h3 class="name">' + e.name + '</h3>' +
+      '<p class="org">' + e.org + '</p>' +
+      '<dl>' +
+        '<dt>что</dt><dd>' + e.what + '</dd>' +
+        '<dt>кто</dt><dd>' + e.who + '</dd>' +
+        '<dt>контакт</dt><dd>' + e.net + '</dd>' +
+      '</dl>' +
+      (e.caveat ? '<p class="caveat">' + e.caveat + '</p>' : '') +
+    '</div>' +
+    '<div class="side">' +
+      '<span class="pill ' + e.pricecls + '">' + e.price + '</span>' +
+      '<span class="pill ' + (e.talk ? 'talk' : 'watch') + '">' + (e.talk ? 'можно говорить' : 'только смотреть') + '</span>' +
+      (e.ai ? '<span class="pill ai">про AI</span>' : '') +
+      '<a class="go" href="' + e.url + '" target="_blank" rel="noopener noreferrer">Открыть →</a>' +
+      '<span class="status ' + e.status + '">' + statusText + '</span>' +
+    '</div>';
+  return el;
+}
+
+const listDated = document.getElementById('list-dated');
+const listAlways = document.getElementById('list-always');
+EVENTS.forEach(e => listDated.appendChild(card(e)));
+ALWAYS.forEach(e => listAlways.appendChild(card(e)));
+
+const active = new Set();
+const countEl = document.getElementById('count');
+
+function apply(){
+  let shown = 0, total = 0;
+  document.querySelectorAll('.row').forEach(r => {
+    total++;
+    let ok = true;
+    active.forEach(f => { if (r.dataset[f] !== '1') ok = false; });
+    r.hidden = !ok;
+    if (ok) shown++;
+  });
+  countEl.textContent = shown + ' из ' + total;
+
+  [listDated, listAlways].forEach(l => {
+    const anyVisible = Array.from(l.querySelectorAll('.row')).some(r => !r.hidden);
+    let msg = l.querySelector('.empty');
+    if (!anyVisible && !msg){
+      msg = document.createElement('p');
+      msg.className = 'empty';
+      msg.textContent = 'Под эти условия здесь ничего не подходит — сними один фильтр.';
+      l.appendChild(msg);
+    } else if (anyVisible && msg){
+      msg.remove();
+    }
+  });
+
+  try { localStorage.setItem('vf', JSON.stringify(Array.from(active))); } catch(err) {}
+}
+
+document.querySelectorAll('.chip').forEach(c => {
+  c.addEventListener('click', () => {
+    const f = c.dataset.f;
+    if (active.has(f)) { active.delete(f); c.setAttribute('aria-pressed','false'); }
+    else { active.add(f); c.setAttribute('aria-pressed','true'); }
+    apply();
+  });
+});
+
+try {
+  const saved = JSON.parse(localStorage.getItem('vf') || '[]');
+  if (Array.isArray(saved)) saved.forEach(f => {
+    const c = document.querySelector('.chip[data-f="' + f + '"]');
+    if (c) { active.add(f); c.setAttribute('aria-pressed','true'); }
+  });
+} catch(err) {}
+
+apply();
+</script>
+
+</body></html>
