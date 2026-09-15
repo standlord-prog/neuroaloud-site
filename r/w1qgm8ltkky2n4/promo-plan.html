@@ -19,25 +19,16 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <div class=sub>Эластичный бустинг: буст 15 вне акции → до 75 внутри, коридор цены отдаёт API Ozon.
 «Максимальный бустинг» и «Распродажа стока» (STOCK_DISCOUNT, max_boost=0) в план не попадают никогда.</div>
 <div class=kpi>
-<div class=k><b>5</b><span>входов БЕЗ снижения цены</span></div>
-<div class=k><b>3</b><span>входов со снижением</span></div>
-<div class=k><b>15 → 0</b><span>медианный буст после входа</span></div>
+<div class=k><b>0</b><span>входов БЕЗ снижения цены</span></div>
+<div class=k><b>0</b><span>входов со снижением</span></div>
+<div class=k><b>15 → —</b><span>медианный буст после входа</span></div>
 <div class=k><b>2039</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
 </div>
-<h2>1. Вход без изменения цены — 5 поз. (витрина не меняется, буст растёт)</h2>
-<div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Сток</th></tr>
-<tr><td><a href='https://www.ozon.ru/product/5296697236' target=_blank>Рубашка ELANORE Черный M</a> <span class=tag>IP</span></td><td>1 546</td><td>7 800</td><td><b>6 981</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>2</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-4/13401166792.jpg><a href='https://www.ozon.ru/product/5331100455' target=_blank>Рубашка ELANORE Белый M</a> <span class=tag>IP</span></td><td>1 546</td><td>7 800</td><td><b>6 981</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>4</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-a/10833224554.jpg><a href='https://www.ozon.ru/product/4280350081' target=_blank>Юбка ONESE Черный XS</a> <span class=tag>IP</span></td><td>5 026</td><td>25 000</td><td><b>22 375</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>7</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-9/10704108285.jpg><a href='https://www.ozon.ru/product/4371250916' target=_blank>Джемпер WHITI Молочный Onesize</a> <span class=tag>IP</span></td><td>2 439</td><td>12 200</td><td><b>10 370</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>7</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-0/11800114128.jpg><a href='https://www.ozon.ru/product/4801082975' target=_blank>Платье NOON (Черный, L)</a> <span class=tag>IP</span></td><td>2 443</td><td>20 000</td><td><b>17 000</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>4</td></tr>
-</table></div>
-<h2>2. Вход со снижением цены — 3 поз. (снижение доставляет акция, не прайс)</h2>
-<div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Коридор</th><th>Сток</th></tr>
-<tr><td><a href='https://www.ozon.ru/product/5297003993' target=_blank>Пальто JOREE Серый Onesize</a> <span class=tag>IP</span></td><td>6 273</td><td>31 500</td><td><b>27 000</b></td><td class=dn>−14.3%</td><td class=boost>15 → 20</td><td class=small>22 050–27 720</td><td>1</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4801083160' target=_blank>Тренч RYIX (M, Серый)</a> <span class=tag>IP</span></td><td>4 404</td><td>22 100</td><td><b>19 000</b></td><td class=dn>−14.0%</td><td class=boost>15 → 20</td><td class=small>15 470–19 448</td><td>1</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/5332026615' target=_blank>Бомбер VINCH Черный L</a> <span class=tag>IP</span></td><td>2 933</td><td>14 700</td><td><b>12 700</b></td><td class=dn>−13.6%</td><td class=boost>15 → 19</td><td class=small>10 290–12 936</td><td>1</td></tr>
-</table></div>
+<div class=warn><b>Новых входов нет.</b> Почти весь ассортимент уже в акции со вчера, летние позиции стоят выше потолка коридора (входить нельзя — уронили бы витрину), часть под недельным локом снижений.</div>
+<h2>1. Вход без изменения цены — 0 поз. (витрина не меняется, буст растёт)</h2>
+<div class=small>Пусто.</div>
+<h2>2. Вход со снижением цены — 0 поз. (снижение доставляет акция, не прайс)</h2>
+<div class=small>Пусто — сегодня ни одного снижения через акцию.</div>
 <h2>3. Буст 75 требует ПОДНЯТЬ цену — 0 поз. (справочно, не применяем)</h2><div class=warn>Решение Андрея 13.08.2026: «Повышать не будем… а снижать давай будем». Список держим справочным — цену вверх пилот не двигает. Показаны 40 позиций с наибольшим разрывом.</div><div class=wrap><table><tr><th>Артикул</th><th>Сезон</th><th>Себес</th><th>Цена сейчас</th><th>Цена для буста</th><th>Δ</th><th>Буст</th></tr>
 </table></div>
 <h2>4. Реестр и дрейф коридоров — 1540 поз. проверено живьём</h2>
