@@ -19,25 +19,24 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <div class=sub>Эластичный бустинг: буст 15 вне акции → до 75 внутри, коридор цены отдаёт API Ozon.
 «Максимальный бустинг» и «Распродажа стока» (STOCK_DISCOUNT, max_boost=0) в план не попадают никогда.</div>
 <div class=kpi>
-<div class=k><b>5</b><span>входов БЕЗ снижения цены</span></div>
-<div class=k><b>0</b><span>входов со снижением</span></div>
-<div class=k><b>15 → 0</b><span>медианный буст после входа</span></div>
-<div class=k><b>2042</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
+<div class=k><b>2</b><span>входов БЕЗ снижения цены</span></div>
+<div class=k><b>1</b><span>входов со снижением</span></div>
+<div class=k><b>15 → 15</b><span>медианный буст после входа</span></div>
+<div class=k><b>2048</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
 </div>
-<h2>1. Вход без изменения цены — 5 поз. (витрина не меняется, буст растёт)</h2>
+<h2>1. Вход без изменения цены — 2 поз. (витрина не меняется, буст растёт)</h2>
 <div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Сток</th></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-k/13376714528.jpg><a href='https://www.ozon.ru/product/4440493202' target=_blank>Джинсы VENOM Голубой M</a> <span class=tag>IP</span></td><td>1 456</td><td>4 400</td><td><b>4 400</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>1</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-k/13376714528.jpg><a href='https://www.ozon.ru/product/4440495460' target=_blank>Джинсы VENOM Голубой XL</a> <span class=tag>IP</span></td><td>1 456</td><td>4 400</td><td><b>4 400</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>1</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-w/11790572504.jpg><a href='https://www.ozon.ru/product/4801083098' target=_blank>Леггинсы LEGGY Черный XS</a> <span class=tag>IP</span></td><td>575</td><td>1 800</td><td><b>1 800</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>2</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-y/11790572218.jpg><a href='https://www.ozon.ru/product/4801083384' target=_blank>Леггинсы LEGGY Черный L</a> <span class=tag>IP</span></td><td>575</td><td>1 800</td><td><b>1 800</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>2</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-d/11716526389.jpg><a href='https://www.ozon.ru/product/4867590204' target=_blank>Юбка TASIGO Черный M</a> <span class=tag>IP</span></td><td>1 700</td><td>5 530</td><td><b>5 530</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>1</td></tr>
+<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-i/9568985742.jpg><a href='https://www.ozon.ru/product/3665931368' target=_blank>FLORINEY</a> <span class=tag>OOO</span></td><td>1 984</td><td>6 100</td><td><b>6 100</b></td><td class=zero>0%</td><td class=boost>15 → 0</td><td>3</td></tr>
+<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-g/9570271264.jpg><a href='https://www.ozon.ru/product/3665932555' target=_blank>NITS</a> <span class=tag>OOO</span></td><td>1 091</td><td>3 550</td><td><b>3 550</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
 </table></div>
-<h2>2. Вход со снижением цены — 0 поз. (снижение доставляет акция, не прайс)</h2>
-<div class=small>Пусто — сегодня ни одного снижения через акцию.</div>
+<h2>2. Вход со снижением цены — 1 поз. (снижение доставляет акция, не прайс)</h2>
+<div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Коридор</th><th>Сток</th></tr>
+<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-9/13400780121.jpg><a href='https://www.ozon.ru/product/5282248120' target=_blank>Блузка ISLAS Белый Onesize</a> <span class=tag>IP</span></td><td>1 034</td><td>4 650</td><td><b>4 598</b></td><td class=dn>−1.1%</td><td class=boost>15 → 15</td><td class=small>4 296–4 598</td><td>3</td></tr>
+</table></div>
 <h2>3. Буст 75 требует ПОДНЯТЬ цену — 0 поз. (справочно, не применяем)</h2><div class=warn>Решение Андрея 13.08.2026: «Повышать не будем… а снижать давай будем». Список держим справочным — цену вверх пилот не двигает. Показаны 40 позиций с наибольшим разрывом.</div><div class=wrap><table><tr><th>Артикул</th><th>Сезон</th><th>Себес</th><th>Цена сейчас</th><th>Цена для буста</th><th>Δ</th><th>Буст</th></tr>
 </table></div>
-<h2>4. Реестр и дрейф коридоров — 1545 поз. проверено живьём</h2>
-<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1545</b><span>в норме по правилу дрейфа</span></div><div class=k><b>0</b><span>сработало буквальное правило вывода</span></div><div class=k><b>32</b><span>цена выше потолка акции</span></div></div>
+<h2>4. Реестр и дрейф коридоров — 1549 поз. проверено живьём</h2>
+<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1549</b><span>в норме по правилу дрейфа</span></div><div class=k><b>0</b><span>сработало буквальное правило вывода</span></div><div class=k><b>32</b><span>цена выше потолка акции</span></div></div>
 <div class=stop><b>Не вывел — нужно твоё решение.</b> Правило конституции «дно коридора ниже цена−25% → выйти из акции» сработало на этих позициях, но проверка живьём показала: <b>витрина у всех равна нашей акционной цене</b> — Ozon цену не роняет, дно коридора это лишь цена, за которую дали бы буст 75. Вывод убил бы работающий буст (у части позиций 30–47) без всякой угрозы. Предлагаю уточнить правило: выходить, когда <b>потолок</b> коридора (price_min_elastic) падает ниже нашей цены и подтягивание к нему пробивает ×3 / −25% — вот это реальный вред.</div>
 <h2>4б. Цена выше потолка акции — буст минимальный (15)</h2><div class=small>Акция таким позициям ничего не даёт. Подтягивать к потолку смысла нет: на потолке буст тоже 15. Алертов Ozon нет (alert_max_action_price_failed = false), риска исключения нет. Обе под недельным локом снижений с 13.08.</div><div class=wrap><table><tr><th>Артикул</th><th>Акц. цена</th><th>Потолок акции</th><th>Разрыв</th></tr>
 <tr><td>Топ ONA Желтый OneSize@1977747 <span class=tag>IP</span></td><td>4 900</td><td>4 868</td><td class=dn>−0.7%</td></tr>
@@ -74,18 +73,18 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <tr><td>VANILLA_XS@1977747 <span class=tag>OOO</span></td><td>34 500</td><td>27 696</td><td class=dn>−19.7%</td></tr>
 </table></div>
 <h2>Пропуски плана</h2><div class=wrap><table><tr><th>Причина</th><th>Позиций</th></tr>
-<tr><td style="text-align:left">🆓 потолок акции ниже витрины больше допуска — входа нет</td><td>1730</td></tr>
+<tr><td style="text-align:left">🆓 потолок акции ниже витрины больше допуска — входа нет</td><td>1720</td></tr>
 <tr><td style="text-align:left">лето: потолок ниже текущей</td><td>118</td></tr>
 <tr><td style="text-align:left">сток 0</td><td>86</td></tr>
 <tr><td style="text-align:left">не наш pid</td><td>58</td></tr>
-<tr><td style="text-align:left">цена Андрея — ведёт apply_andrey_prices, пилот не трогает</td><td>57</td></tr>
+<tr><td style="text-align:left">цена Андрея — ведёт apply_andrey_prices, пилот не трогает</td><td>54</td></tr>
 <tr><td style="text-align:left">сезон вечернее: пока не работаем</td><td>53</td></tr>
 <tr><td style="text-align:left">⛔ never_touch — не трогать вообще</td><td>43</td></tr>
-<tr><td style="text-align:left">🆓 зажатая потолком цена ниже пола ×3 — вход пропущен</td><td>27</td></tr>
+<tr><td style="text-align:left">🆓 зажатая потолком цена ниже пола ×3 — вход пропущен</td><td>39</td></tr>
 <tr><td style="text-align:left">⛔ never_touch: юбки PACHKA/DELIGHT (Андрей 04.09) — не трогать вообще</td><td>14</td></tr>
-<tr><td style="text-align:left">🧊 реклама: вход только без изменения цены</td><td>13</td></tr>
 <tr><td style="text-align:left">сезон зима: пока не работаем</td><td>12</td></tr>
-<tr><td style="text-align:left">🧊 заморожен (реклама на ИП)</td><td>7</td></tr>
+<tr><td style="text-align:left">🧊 реклама: вход только без изменения цены</td><td>10</td></tr>
+<tr><td style="text-align:left">🧊 заморожен (реклама на ИП)</td><td>5</td></tr>
 <tr><td style="text-align:left">🆓 сток меньше min_stock акции</td><td>1</td></tr>
 <tr><td style="text-align:left">акция требует слишком дёшево (пол ×3 выше потолка)</td><td>1</td></tr>
 <tr><td style="text-align:left">сезон вне сезона: пока не работаем</td><td>1</td></tr>
