@@ -19,23 +19,21 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <div class=sub>Эластичный бустинг: буст 15 вне акции → до 75 внутри, коридор цены отдаёт API Ozon.
 «Максимальный бустинг» и «Распродажа стока» (STOCK_DISCOUNT, max_boost=0) в план не попадают никогда.</div>
 <div class=kpi>
-<div class=k><b>3</b><span>входов БЕЗ снижения цены</span></div>
+<div class=k><b>1</b><span>входов БЕЗ снижения цены</span></div>
 <div class=k><b>0</b><span>входов со снижением</span></div>
 <div class=k><b>15 → 15</b><span>медианный буст после входа</span></div>
-<div class=k><b>1723</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
+<div class=k><b>1724</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
 </div>
-<h2>1. Вход без изменения цены — 3 поз. (витрина не меняется, буст растёт)</h2>
+<h2>1. Вход без изменения цены — 1 поз. (витрина не меняется, буст растёт)</h2>
 <div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Сток</th></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-5/9093613685.jpg><a href='https://www.ozon.ru/product/3487934827' target=_blank>CONIC_L</a> <span class=tag>OOO</span></td><td>2 271</td><td>13 110</td><td><b>13 110</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-6/9093634530.jpg><a href='https://www.ozon.ru/product/3487934403' target=_blank>RONTO_S</a> <span class=tag>OOO</span></td><td>1 946</td><td>11 490</td><td><b>11 490</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-h/9569047877.jpg><a href='https://www.ozon.ru/product/3665931588' target=_blank>VANILLA_M</a> <span class=tag>OOO</span></td><td>3 714</td><td>34 500</td><td><b>34 500</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
+<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-v/9751245619.jpg><a href='https://www.ozon.ru/product/3665930881' target=_blank>JOSH_BLU</a> <span class=tag>OOO</span></td><td>930</td><td>5 410</td><td><b>5 410</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
 </table></div>
 <h2>2. Вход со снижением цены — 0 поз. (снижение доставляет акция, не прайс)</h2>
 <div class=small>Пусто — сегодня ни одного снижения через акцию.</div>
 <h2>3. Буст 75 требует ПОДНЯТЬ цену — 0 поз. (справочно, не применяем)</h2><div class=warn>Решение Андрея 13.08.2026: «Повышать не будем… а снижать давай будем». Список держим справочным — цену вверх пилот не двигает. Показаны 40 позиций с наибольшим разрывом.</div><div class=wrap><table><tr><th>Артикул</th><th>Сезон</th><th>Себес</th><th>Цена сейчас</th><th>Цена для буста</th><th>Δ</th><th>Буст</th></tr>
 </table></div>
-<h2>4. Реестр и дрейф коридоров — 1326 поз. проверено живьём</h2>
-<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1326</b><span>в норме по правилу дрейфа</span></div><div class=k><b>0</b><span>сработало буквальное правило вывода</span></div><div class=k><b>35</b><span>цена выше потолка акции</span></div></div>
+<h2>4. Реестр и дрейф коридоров — 1327 поз. проверено живьём</h2>
+<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1327</b><span>в норме по правилу дрейфа</span></div><div class=k><b>0</b><span>сработало буквальное правило вывода</span></div><div class=k><b>35</b><span>цена выше потолка акции</span></div></div>
 <div class=stop><b>Не вывел — нужно твоё решение.</b> Правило конституции «дно коридора ниже цена−25% → выйти из акции» сработало на этих позициях, но проверка живьём показала: <b>витрина у всех равна нашей акционной цене</b> — Ozon цену не роняет, дно коридора это лишь цена, за которую дали бы буст 75. Вывод убил бы работающий буст (у части позиций 30–47) без всякой угрозы. Предлагаю уточнить правило: выходить, когда <b>потолок</b> коридора (price_min_elastic) падает ниже нашей цены и подтягивание к нему пробивает ×3 / −25% — вот это реальный вред.</div>
 <h2>4б. Цена выше потолка акции — буст минимальный (15)</h2><div class=small>Акция таким позициям ничего не даёт. Подтягивать к потолку смысла нет: на потолке буст тоже 15. Алертов Ozon нет (alert_max_action_price_failed = false), риска исключения нет. Обе под недельным локом снижений с 13.08.</div><div class=wrap><table><tr><th>Артикул</th><th>Акц. цена</th><th>Потолок акции</th><th>Разрыв</th></tr>
 <tr><td>Топ ONA Желтый OneSize@1977747 <span class=tag>IP</span></td><td>4 900</td><td>4 868</td><td class=dn>−0.7%</td></tr>
@@ -79,7 +77,7 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <tr><td style="text-align:left">лето: потолок ниже текущей</td><td>120</td></tr>
 <tr><td style="text-align:left">сток 0</td><td>86</td></tr>
 <tr><td style="text-align:left">не наш pid</td><td>58</td></tr>
-<tr><td style="text-align:left">цена Андрея — ведёт apply_andrey_prices, пилот не трогает</td><td>55</td></tr>
+<tr><td style="text-align:left">цена Андрея — ведёт apply_andrey_prices, пилот не трогает</td><td>54</td></tr>
 <tr><td style="text-align:left">сезон вечернее: пока не работаем</td><td>53</td></tr>
 <tr><td style="text-align:left">🆓 зажатая потолком цена ниже пола ×3 — вход пропущен</td><td>41</td></tr>
 <tr><td style="text-align:left">⛔ never_touch — не трогать вообще</td><td>37</td></tr>
