@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Фитиль и правильный замок — черновик</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    background: #070c26 radial-gradient(ellipse at 50% 40%, #101c4c 0%, #070c26 70%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Trebuchet MS", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  }
+  #wrap { position: relative; box-shadow: 0 0 60px rgba(0, 0, 0, 0.6); }
+  #game { display: block; outline: none; background: #0b1440; }
+  #dbg {
+    position: absolute; top: 72px; right: 10px; width: 300px; box-sizing: border-box;
+    padding: 10px 12px; border-radius: 12px; font-size: 12.5px; line-height: 1.45;
+    color: #e8eeff; background: rgba(6, 10, 30, 0.86); border: 1px solid rgba(120, 200, 255, 0.35);
+    user-select: none; -webkit-user-select: none;
+  }
+  #dbg[hidden] { display: none; }
+  #dbg .dbg-t { font-weight: bold; color: #8fe3ff; margin-bottom: 6px; }
+  #dbg .dbg-t span { font-weight: normal; color: #9fb0d8; margin-left: 6px; }
+  #dbg .dbg-r { margin: 3px 0; }
+  #dbg .dbg-res { color: #ffe29a; }
+  #dbg .dbg-info { color: #aab7dd; font-size: 11.5px; }
+  #dbg .dbg-msg { color: #b6ffb6; min-height: 1em; }
+  #dbg button {
+    font: inherit; font-weight: bold; min-width: 24px; padding: 1px 6px; margin-right: 3px;
+    color: #0b1440; background: #bfe9ff; border: 0; border-radius: 6px; cursor: pointer;
+  }
+  #dbg button:hover { background: #ffffff; }
+  noscript { color: #fff; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="960" height="540" tabindex="0" aria-label="Игра «Фитиль и правильный замок»"></canvas>
+  <div id="dbg" hidden></div>
+</div>
+<noscript>Для игры нужен включённый JavaScript.</noscript>
+<!-- логика (без окна браузера, её гоняют тесты в Node) -->
+<script src="js/core.js"></script>
+<script src="js/input.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/player.js"></script>
+<script src="js/level1.js"></script>
+<script src="js/world.js"></script>
+<script src="tools/reach.js"></script>
+<!-- картинка, звук, режим проверки, запуск -->
+<script src="js/render.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/debug.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
