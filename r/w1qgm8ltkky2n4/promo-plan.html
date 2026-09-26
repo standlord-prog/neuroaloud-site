@@ -19,31 +19,20 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <div class=sub>Эластичный бустинг: буст 15 вне акции → до 75 внутри, коридор цены отдаёт API Ozon.
 «Максимальный бустинг» и «Распродажа стока» (STOCK_DISCOUNT, max_boost=0) в план не попадают никогда.</div>
 <div class=kpi>
-<div class=k><b>5</b><span>входов БЕЗ снижения цены</span></div>
-<div class=k><b>5</b><span>входов со снижением</span></div>
-<div class=k><b>15 → 34</b><span>медианный буст после входа</span></div>
+<div class=k><b>0</b><span>входов БЕЗ снижения цены</span></div>
+<div class=k><b>0</b><span>входов со снижением</span></div>
+<div class=k><b>15 → —</b><span>медианный буст после входа</span></div>
 <div class=k><b>1823</b><span>позиций в реестре, живой буст (медиана) 0</span></div>
 </div>
-<h2>1. Вход без изменения цены — 5 поз. (витрина не меняется, буст растёт)</h2>
-<div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Сток</th></tr>
-<tr><td><a href='https://www.ozon.ru/product/4601991706' target=_blank>Куртка RALPH Черный L</a> <span class=tag>IP</span></td><td>1 773</td><td>7 560</td><td><b>7 560</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>2</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4601990274' target=_blank>Куртка RALPH Черный M</a> <span class=tag>IP</span></td><td>1 773</td><td>7 560</td><td><b>7 560</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4601992363' target=_blank>Куртка RALPH Черный S</a> <span class=tag>IP</span></td><td>1 773</td><td>7 560</td><td><b>7 560</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-7/12035538799.jpg><a href='https://www.ozon.ru/product/4867589531' target=_blank>Платье MILANO Черный Onesize</a> <span class=tag>IP</span></td><td>1 958</td><td>6 290</td><td><b>6 263</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>1</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4867589721' target=_blank>Пальто ANDY Черный M</a> <span class=tag>IP</span></td><td>3 429</td><td>22 950</td><td><b>22 950</b></td><td class=zero>0%</td><td class=boost>15 → 15</td><td>2</td></tr>
-</table></div>
-<h2>2. Вход со снижением цены — 5 поз. (снижение доставляет акция, не прайс)</h2>
-<div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Цена сейчас</th><th>Цена в акции</th><th>Δ</th><th>Буст</th><th>Коридор</th><th>Сток</th></tr>
-<tr><td><a href='https://www.ozon.ru/product/4867589612' target=_blank>Лонгслив LACE Черный L</a> <span class=tag>IP</span></td><td>664</td><td>3 400</td><td><b>2 700</b></td><td class=dn>−20.6%</td><td class=boost>15 → 34</td><td class=small>2 380–2 992</td><td>2</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/5216618057' target=_blank>Лонгслив LACE Черный XS</a> <span class=tag>IP</span></td><td>664</td><td>3 400</td><td><b>2 700</b></td><td class=dn>−20.6%</td><td class=boost>15 → 34</td><td class=small>2 380–2 992</td><td>1</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4383320487' target=_blank>Пальто M.TOM Серый M</a> <span class=tag>IP</span></td><td>2 417</td><td>12 100</td><td><b>9 800</b></td><td class=dn>−19.0%</td><td class=boost>15 → 49</td><td class=small>9 559–11 083</td><td>2</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4440501567' target=_blank>Кардиган M.SLAX Коричневый Onesize</a> <span class=tag>IP</span></td><td>846</td><td>4 300</td><td><b>3 500</b></td><td class=dn>−18.6%</td><td class=boost>15 → 47</td><td class=small>3 397–3 938</td><td>2</td></tr>
-<tr><td><a href='https://www.ozon.ru/product/4440500995' target=_blank>Кардиган GLORIA Серый Onesize</a> <span class=tag>IP</span></td><td>799</td><td>4 000</td><td><b>3 300</b></td><td class=dn>−17.5%</td><td class=boost>15 → 44</td><td class=small>3 160–3 664</td><td>1</td></tr>
-</table></div>
+<div class=warn><b>Новых входов нет.</b> Почти весь ассортимент уже в акции со вчера, летние позиции стоят выше потолка коридора (входить нельзя — уронили бы витрину), часть под недельным локом снижений.</div>
+<h2>1. Вход без изменения цены — 0 поз. (витрина не меняется, буст растёт)</h2>
+<div class=small>Пусто.</div>
+<h2>2. Вход со снижением цены — 0 поз. (снижение доставляет акция, не прайс)</h2>
+<div class=small>Пусто — сегодня ни одного снижения через акцию.</div>
 <h2>3. Буст 75 требует ПОДНЯТЬ цену — 0 поз. (справочно, не применяем)</h2><div class=warn>Решение Андрея 13.08.2026: «Повышать не будем… а снижать давай будем». Список держим справочным — цену вверх пилот не двигает. Показаны 40 позиций с наибольшим разрывом.</div><div class=wrap><table><tr><th>Артикул</th><th>Сезон</th><th>Себес</th><th>Цена сейчас</th><th>Цена для буста</th><th>Δ</th><th>Буст</th></tr>
 </table></div>
 <h2>4. Реестр и дрейф коридоров — 1410 поз. проверено живьём</h2>
-<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1391</b><span>в норме по правилу дрейфа</span></div><div class=k><b>19</b><span>сработало буквальное правило вывода</span></div><div class=k><b>46</b><span>цена выше потолка акции</span></div></div>
+<div class=kpi><div class=k><b>0</b><span>фактический буст, медиана (мин 0, макс 55)</span></div><div class=k><b>1391</b><span>в норме по правилу дрейфа</span></div><div class=k><b>19</b><span>сработало буквальное правило вывода</span></div><div class=k><b>50</b><span>цена выше потолка акции</span></div></div>
 <div class=stop><b>Не вывел — нужно твоё решение.</b> Правило конституции «дно коридора ниже цена−25% → выйти из акции» сработало на этих позициях, но проверка живьём показала: <b>витрина у всех равна нашей акционной цене</b> — Ozon цену не роняет, дно коридора это лишь цена, за которую дали бы буст 75. Вывод убил бы работающий буст (у части позиций 30–47) без всякой угрозы. Предлагаю уточнить правило: выходить, когда <b>потолок</b> коридора (price_min_elastic) падает ниже нашей цены и подтягивание к нему пробивает ×3 / −25% — вот это реальный вред.</div>
 <div class=wrap><table><tr><th>Артикул</th><th>Себес</th><th>Акц. цена</th><th>Витрина</th><th>Дно</th><th>Потолок</th><th>Живой буст</th><th>Сработало правило</th></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-e/10498814150.jpg><a href='https://www.ozon.ru/product/4275192883' target=_blank>Платье NAIVE_TR Розовый M</a> <span class=tag>IP</span></td><td>776</td><td>3 500</td><td>3 499</td><td>2 220</td><td>2 508</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 3500 И потолок 2508 &lt; цена−25% 2624</td></tr>
@@ -61,7 +50,7 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-k/13401163856.jpg><a href='https://www.ozon.ru/product/5317779501' target=_blank>Шорты SALVADOR Синий M</a> <span class=tag>IP</span></td><td>1 254</td><td>3 830</td><td>3 830</td><td>3 150</td><td>3 558</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 3830 И потолок 3558 &lt; ×3 себеса 3800</td></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-e/9093603794.jpg><a href='https://www.ozon.ru/product/3487934723' target=_blank>LANMI_BR_S</a> <span class=tag>OOO</span></td><td>2 562</td><td>11 620</td><td>8 760</td><td>8 167</td><td>9 226</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 11620 И недельный лок: снижали 2026-09-25 (1 дн. назад)</td></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-4/9078575620.jpg><a href='https://www.ozon.ru/product/3487934213' target=_blank>MAEVIE_WH_S</a> <span class=tag>OOO</span></td><td>2 229</td><td>7 125</td><td>6 700</td><td>5 413</td><td>6 185</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 7125 И потолок 6185 &lt; ×3 себеса 6700</td></tr>
-<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-e/9093603794.jpg><a href='https://www.ozon.ru/product/3487934149' target=_blank>LANMI_BR_XS</a> <span class=tag>OOO</span></td><td>2 562</td><td>11 620</td><td>8 570</td><td>8 603</td><td>9 719</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 11620 И недельный лок: снижали 2026-09-25 (1 дн. назад)</td></tr>
+<tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-e/9093603794.jpg><a href='https://www.ozon.ru/product/3487934149' target=_blank>LANMI_BR_XS</a> <span class=tag>OOO</span></td><td>2 562</td><td>11 620</td><td>8 570</td><td>8 167</td><td>9 226</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 11620 И недельный лок: снижали 2026-09-25 (1 дн. назад)</td></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-u/9093556362.jpg><a href='https://www.ozon.ru/product/3487934451' target=_blank>QUES_XS</a> <span class=tag>OOO</span></td><td>1 990</td><td>5 225</td><td>4 360</td><td>3 586</td><td>4 051</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 5225 И потолок 4051 &lt; ×3 себеса 6000; потолок 4051 &lt; цена−25% 7275</td></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-1/9574169473.jpg><a href='https://www.ozon.ru/product/3665932372' target=_blank>AISE_S</a> <span class=tag>OOO</span></td><td>3 500</td><td>23 400</td><td>18 500</td><td>19 522</td><td>22 922</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 23400 И недельный лок: снижали 2026-09-25 (1 дн. назад)</td></tr>
 <tr><td><img src=https://ir.ozone.ru/s3/multimedia-1-g/9570271264.jpg><a href='https://www.ozon.ru/product/3665932555' target=_blank>NITS</a> <span class=tag>OOO</span></td><td>1 091</td><td>3 550</td><td>3 030</td><td>3 070</td><td>3 508</td><td class=boost>15</td><td class=small style="text-align:left">потолок ниже нашей цены 3550 И недельный лок: снижали 2026-09-25 (1 дн. назад)</td></tr>
@@ -69,6 +58,9 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <h2>4б. Цена выше потолка акции — буст минимальный (15)</h2><div class=small>Акция таким позициям ничего не даёт. Подтягивать к потолку смысла нет: на потолке буст тоже 15. Алертов Ozon нет (alert_max_action_price_failed = false), риска исключения нет. Обе под недельным локом снижений с 13.08.</div><div class=wrap><table><tr><th>Артикул</th><th>Акц. цена</th><th>Потолок акции</th><th>Разрыв</th></tr>
 <tr><td>Топ ONA Желтый OneSize@1977747 <span class=tag>IP</span></td><td>4 900</td><td>4 868</td><td class=dn>−0.7%</td></tr>
 <tr><td>Брюки ONIUX Бежевый S@1977747 <span class=tag>IP</span></td><td>8 835</td><td>7 664</td><td class=dn>−13.3%</td></tr>
+<tr><td>Джинсы BEEN Синий M@1977747 <span class=tag>IP</span></td><td>5 000</td><td>4 673</td><td class=dn>−6.5%</td></tr>
+<tr><td>Пиджак LANMI Черный S@1977747 <span class=tag>IP</span></td><td>8 480</td><td>7 879</td><td class=dn>−7.1%</td></tr>
+<tr><td>Пиджак LANMI Черный M@1977747 <span class=tag>IP</span></td><td>8 480</td><td>7 981</td><td class=dn>−5.9%</td></tr>
 <tr><td>Брюки CLARIFY Черный M@1977747 <span class=tag>IP</span></td><td>2 720</td><td>2 698</td><td class=dn>−0.8%</td></tr>
 <tr><td>Блузка YOUNG Черный S@1977747 <span class=tag>IP</span></td><td>5 775</td><td>5 192</td><td class=dn>−10.1%</td></tr>
 <tr><td>Шорты AMES Черный XS@1977747 <span class=tag>IP</span></td><td>5 500</td><td>5 109</td><td class=dn>−7.1%</td></tr>
@@ -78,6 +70,7 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 <tr><td>юбка lurdes _bl onesize черный@1977747 <span class=tag>IP</span></td><td>3 664</td><td>3 639</td><td class=dn>−0.7%</td></tr>
 <tr><td>Бюстгальтер ISSA Черный XL@1977747 <span class=tag>IP</span></td><td>1 832</td><td>1 819</td><td class=dn>−0.7%</td></tr>
 <tr><td>Бюстгальтер ISSA Черный M@1977747 <span class=tag>IP</span></td><td>1 832</td><td>1 736</td><td class=dn>−5.2%</td></tr>
+<tr><td>Пиджак GODDESS Серый S@1977747 <span class=tag>IP</span></td><td>12 915</td><td>12 829</td><td class=dn>−0.7%</td></tr>
 <tr><td>Платье LABEL (Коричневый, Onesize)@1977747 <span class=tag>IP</span></td><td>3 800</td><td>3 696</td><td class=dn>−2.7%</td></tr>
 <tr><td>Джинсы ISTA Коричневый L@1977747 <span class=tag>IP</span></td><td>5 280</td><td>4 874</td><td class=dn>−7.7%</td></tr>
 <tr><td>Юбка MISSONI Черный XL@1977747 <span class=tag>IP</span></td><td>4 480</td><td>4 400</td><td class=dn>−1.8%</td></tr>
@@ -116,8 +109,8 @@ a{color:#0b57d0;text-decoration:none}.tag{background:#f0f2f5;color:#555;border-r
 </table></div>
 <h2>Пропуски плана</h2><div class=wrap><table><tr><th>Причина</th><th>Позиций</th></tr>
 <tr><td style="text-align:left">🆓 потолок акции ниже витрины больше допуска — входа нет</td><td>1570</td></tr>
-<tr><td style="text-align:left">не наш pid</td><td>223</td></tr>
-<tr><td style="text-align:left">лето: потолок ниже текущей</td><td>163</td></tr>
+<tr><td style="text-align:left">не наш pid</td><td>226</td></tr>
+<tr><td style="text-align:left">лето: потолок ниже текущей</td><td>165</td></tr>
 <tr><td style="text-align:left">сток 0</td><td>89</td></tr>
 <tr><td style="text-align:left">цена Андрея — ведёт apply_andrey_prices, пилот не трогает</td><td>73</td></tr>
 <tr><td style="text-align:left">сезон вечернее: пока не работаем</td><td>63</td></tr>
